@@ -1,31 +1,31 @@
-# Open Canvas
+# Lion Canvas
 
 [TRY IT OUT HERE](https://opencanvas.langchain.com/)
 
 ![Screenshot of app](./public/screenshot.png)
 
-Open Canvas is an open source web application for collaborating with agents to better write documents. It is inspired by [OpenAI's "Canvas"](https://openai.com/index/introducing-canvas/), but with a few key differences.
+Lion Canvas is an open source web application for collaborating with agents to better write documents. It is inspired by [OpenAI's "Canvas"](https://openai.com/index/introducing-canvas/), but with a few key differences.
 
 1. **Open Source**: All the code, from the frontend, to the content generation agent, to the reflection agent is open source and MIT licensed.
-2. **Built in memory**: Open Canvas ships out of the box with a [reflection agent](https://langchain-ai.github.io/langgraphjs/tutorials/reflection/reflection/) which stores style rules and user insights in a [shared memory store](https://langchain-ai.github.io/langgraphjs/concepts/memory/). This allows Open Canvas to remember facts about you across sessions.
-3. **Start from existing documents**: Open Canvas allows users to start with a blank text, or code editor in the language of their choice, allowing you to start the session with your existing content, instead of being forced to start with a chat interaction. We believe this is an ideal UX because many times you will already have some content to start with, and want to iterate on-top of it.
+2. **Built in memory**: Lion Canvas ships out of the box with a [reflection agent](https://langchain-ai.github.io/langgraphjs/tutorials/reflection/reflection/) which stores style rules and user insights in a [shared memory store](https://langchain-ai.github.io/langgraphjs/concepts/memory/). This allows Lion Canvas to remember facts about you across sessions.
+3. **Start from existing documents**: Lion Canvas allows users to start with a blank text, or code editor in the language of their choice, allowing you to start the session with your existing content, instead of being forced to start with a chat interaction. We believe this is an ideal UX because many times you will already have some content to start with, and want to iterate on-top of it.
 
 ## Features
 
-- **Memory**: Open Canvas has a built in memory system which will automatically generate reflections and memories on you, and your chat history. These are then included in subsequent chat interactions to give a more personalized experience.
+- **Memory**: Lion Canvas has a built in memory system which will automatically generate reflections and memories on you, and your chat history. These are then included in subsequent chat interactions to give a more personalized experience.
 - **Custom quick actions**: Custom quick actions allow you to define your own prompts which are tied to your user, and persist across sessions. These then can be easily invoked through a single click, and apply to the artifact you're currently viewing.
 - **Pre-built quick actions**: There are also a series of pre-built quick actions for common writing and coding tasks that are always available.
 - **Artifact versioning**: All artifacts have a "version" tied to them, allowing you to travel back in time and see previous versions of your artifact.
 - **Code, Markdown, or both**: The artifact view allows for viewing and editing both code, and markdown. You can even have chats which generate code, and markdown artifacts, and switch between them.
-- **Live markdown rendering & editing**: Open Canvas's markdown editor allows you to view the rendered markdown while you're editing, without having to toggle back and fourth.
+- **Live markdown rendering & editing**: Lion Canvas's markdown editor allows you to view the rendered markdown while you're editing, without having to toggle back and fourth.
 
 ## Setup locally
 
-This guide will cover how to setup and run Open Canvas locally. If you prefer a YouTube video guide, check out [this video](https://youtu.be/sBzcQYPMekc).
+This guide will cover how to setup and run Lion Canvas locally. If you prefer a YouTube video guide, check out [this video](https://youtu.be/sBzcQYPMekc).
 
 ### Prerequisites
 
-Open Canvas requires the following API keys and external services:
+Lion Canvas requires the following API keys and external services:
 
 #### Package Manager
 
@@ -92,7 +92,7 @@ Now we'll cover how to setup and run the LangGraph server locally.
 
 Follow the [`Installation` instructions in the LangGraph docs](https://langchain-ai.github.io/langgraph/cloud/reference/cli/#installation) to install the LangGraph CLI.
 
-Once installed, navigate to the root of the Open Canvas repo and run `LANGSMITH_API_KEY="<YOUR_LANGSMITH_API_KEY>" langgraph up --watch --port 54367` (replacing `<YOUR_LANGSMITH_API_KEY>` with your LangSmith API key).
+Once installed, navigate to the root of the Lion Canvas repo and run `LANGSMITH_API_KEY="<YOUR_LANGSMITH_API_KEY>" langgraph up --watch --port 54367` (replacing `<YOUR_LANGSMITH_API_KEY>` with your LangSmith API key).
 
 Once it finishes pulling the docker image and installing dependencies, you should see it log:
 
@@ -103,7 +103,7 @@ Ready!
 - LangGraph Studio: https://smith.langchain.com/studio/?baseUrl=http://*********:54367
 ```
 
-After your LangGraph server is running, execute the following command to start the Open Canvas app:
+After your LangGraph server is running, execute the following command to start the Lion Canvas app:
 
 ```bash
 yarn dev
@@ -114,7 +114,7 @@ Then, open [localhost:3000](http://localhost:3000) with your browser and start i
 
 ## LLM Models
 
-Open Canvas is designed to be compatible with any LLM model. The current deployment has the following models configured:
+Lion Canvas is designed to be compatible with any LLM model. The current deployment has the following models configured:
 
 - **Anthropic Claude 3 Haiku 👤**: Haiku is Anthropic's fastest model, great for quick tasks like making edits to your document. Sign up for an Anthropic account [here](https://console.anthropic.com/).
 - **Fireworks Llama 3 70B 🦙**: Llama 3 is a SOTA open source model from Meta, powered by [Fireworks AI](https://fireworks.ai/). You can sign up for an account [here](https://fireworks.ai/login).
@@ -138,7 +138,7 @@ If you'd like to add a new model, follow these simple steps:
 
 ### Local Ollama models
 
-Open Canvas supports calling local LLMs running on Ollama. This is not enabled in the hosted version of Open Canvas, but you can use this in your own local/deployed Open Canvas instance.
+Lion Canvas supports calling local LLMs running on Ollama. This is not enabled in the hosted version of Lion Canvas, but you can use this in your own local/deployed Lion Canvas instance.
 
 To use a local Ollama model, first ensure you have [Ollama](https://ollama.com) installed, and a model that supports tool calling pulled (the default model is `llama3.3`).
 
@@ -152,7 +152,7 @@ Then, set the `NEXT_PUBLIC_OLLAMA_ENABLED` environment variable to `true`, and t
 
 ## Troubleshooting
 
-Below are some common issues you may run into if running Open Canvas yourself:
+Below are some common issues you may run into if running Lion Canvas yourself:
 
 - **I have the LangGraph server running successfully, and my client can make requests, but no text is being generated:** This can happen if you start & connect to multiple different LangGraph servers locally in the same browser. Try clearing the `oc_thread_id_v2` cookie and refreshing the page. This is because each unique LangGraph server has its own database where threads are stored, so a thread ID from one server will not be found in the database of another server.
 
@@ -166,9 +166,9 @@ Below are some common issues you may run into if running Open Canvas yourself:
 
 ### Features
 
-Below is a list of features we'd like to add to Open Canvas in the near future:
+Below is a list of features we'd like to add to Lion Canvas in the near future:
 
-- **Render React in the editor**: Ideally, if you have Open Canvas generate React (or HTML) code, we should be able to render it live in the editor. **Edit**: This is in the planning stage now!
+- **Render React in the editor**: Ideally, if you have Lion Canvas generate React (or HTML) code, we should be able to render it live in the editor. **Edit**: This is in the planning stage now!
 - **Multiple assistants**: Users should be able to create multiple assistants, each having their own memory store.
 - **Give assistants custom 'tools'**: Once we've implemented `RemoteGraph` in LangGraph.js, users should be able to give assistants access to call their own graphs as tools. This means you could customize your assistant to have access to current events, your own personal knowledge graph, etc.
 
@@ -176,7 +176,7 @@ Do you have a feature request? Please [open an issue](https://github.com/langcha
 
 ### Contributing
 
-We'd like to continue developing and improving Open Canvas, and want your help!
+We'd like to continue developing and improving Lion Canvas, and want your help!
 
 To start, there are a handful of GitHub issues with feature requests outlining improvements and additions to make the app's UX even better.
 There are three main labels:
